@@ -66,6 +66,9 @@ public class ViewController implements Initializable {
 //class variables
     
 //respnsible for create a new Person object and check the email is valid
+    //ha gombra szeretnél hivatkoni egy method-ban akkor void legyen és paraméternek várjon egy ActionEvent-et és @FXML alatt legyen meg a gomb
+    //mint osztály változó azután a .fxml dokumentumban keresd meg a sort ahol a gomb van és így hivatkozz a methodra a controllerből :
+    // onAction="#methodname" 
     public void addContact(ActionEvent event) {
         String email = inputEmail.getText();
         if (email.length() > 3 && email.contains("@") && email.contains(".")) {
