@@ -26,10 +26,9 @@ import javafx.util.Callback;
 
 
 public class ViewController implements Initializable {
-
+//class variables
     @FXML
     private Label label;
-
     @FXML
     private TableView table;
     @FXML
@@ -64,7 +63,9 @@ public class ViewController implements Initializable {
     private final String MENU_EXIT = "Kilépés";
     private final String MENU_LIST = "Lista";
     private final String MENU_EXPORT = "Exportálás";
-
+//class variables
+    
+//respnsible for create a new Person object and check the email is valid
     public void addContact(ActionEvent event) {
         String email = inputEmail.getText();
         if (email.length() > 3 && email.contains("@") && email.contains(".")) {
@@ -79,6 +80,7 @@ public class ViewController implements Initializable {
         }
     }
 
+ //generate a table to PDF from the List of Persons
     public void exportListToPdf(ActionEvent event) {
         String fileName = inputExport.getText();
         fileName = fileName.replaceAll("\\s+", "");
@@ -92,6 +94,7 @@ public class ViewController implements Initializable {
 
     }
 
+//make all the coloums and rows, fill the table with Persons
     public void setTableData() {
         TableColumn firstNameCol = new TableColumn("Keresztnév");
         firstNameCol.setMinWidth(100);
@@ -193,6 +196,7 @@ public class ViewController implements Initializable {
 
     ;
 
+//menu initialize
     private void setMenuData() {
         TreeItem treeItemRoot1 = new TreeItem<>("Menü");
         TreeView treeView = new TreeView<>(treeItemRoot1);
@@ -241,7 +245,7 @@ public class ViewController implements Initializable {
         });
 
     }
-
+//simple popup alert window
     private void alert(String text) {
         mainSplit.setVisible(true);
         mainSplit.setOpacity(0.3);
